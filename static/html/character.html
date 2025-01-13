@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Character Page</title>
+  <script>
+    // Пример быстрого скрипта, который запрашивает сохранённый character.json
+    // и подставляет пути к изображениям
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('/get_character')
+        .then(response => response.json())
+        .then(data => {
+          // data может содержать не только face/hair и т.д., но и { birth, name, gender }.
+          // Проверяем, есть ли там индексы, и подставляем:
+          
+          const parts = ['face','hair','eye','nose','mouth','shirt','pants','shoes'];
+          parts.forEach(part => {
+            if (data[part] !== undefined) {
+              const partIndex = data[part];
+              const imgElement = document.querySelector(`.character .${part}`);
+              if (imgElement) {
+                imgElement.src = `static/img/character/${part}/${part}_${partIndex}.png`;
+              }
+            }
+          });
+        })
+        .catch(err => console.error('Ошибка при загрузке персонажа:', err));
+    });
+  </script>
+</head>
+<body>
+  <h1>Ваш собранный персонаж</h1>
+  <div class="character">
+    <div class="head">
+      <img class="hair" src="" alt="hair">
+      <img class="face" src="" alt="face">
+      <img class="eye" src="" alt="eye">
+      <img class="nose" src="" alt="nose">
+      <img class="mouth" src="" alt="mouth">
+    </div>
+    <div class="body">
+      <img class="shirt" src="" alt="shirt">
+      <img class="pants" src="" alt="pants">
+      <img class="shoes" src="" alt="shoes">
+    </div>
+  </div>
+</body>
+</html>

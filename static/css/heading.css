@@ -1,0 +1,15 @@
+.heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(130, 168, 189, 1), rgba(60, 119, 152, 1));
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    min-height: 54px;
+    border-radius: 0px 0px 8px 8px;
+    box-shadow: 0px 2px 8px 0px rgba(83, 128, 153, 0.50), 0px 2px 0px 0px rgba(255, 255, 255, 0.50) inset, 0px -2px 0px 0px rgba(18, 18, 18, 0.20) inset;
+    color:#F5F7FA;
+}

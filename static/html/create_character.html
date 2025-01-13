@@ -1,0 +1,283 @@
+<!--Step--1-->
+<div id="create-character-step-1" style="display: block;">
+    
+    <div class="heading">
+        <!-- Кнопка слева -->
+        
+        <h1 class="headline-600-large">Ваши данные</h1>
+
+        <!-- Кнопка справа-->
+    </div>
+
+    <main>
+        <div class="island">
+            <h3 class="island_heading">Ваши данные</h3>
+            <p class="island_body" style="text-align: center;">Проверьте данные вашего аватар, мы взяли его с вашего Ozon ID</p>
+            
+            <!-- Форма 1-->
+            <form class="island_form" id="character-step-1-form" onsubmit="event.preventDefault(); saveStep1();"> 
+                <input type="text" id="name" value="Саша" required>
+                <input type="date" id="dob" value="2000-01-01" required>
+                
+                <span class="form_button">
+                    <button class="action_button" type="submit">Далее</button>
+                </span>
+        </form>
+        </div>
+    </main>
+    
+</div>
+
+<!--Step--2-->
+<div id="create-character-step-2" style="display: none;">
+    <div class="heading">
+        <button class="back_button" onclick="goBackToStep1()">
+            <img src="static/img/chevron-left.svg" alt="Back">
+            <p>Назад</p>
+        </button>
+        <h1 class="headline-600-large">Пол персонажа</h1>
+    </div>
+
+    <main>
+        <div class="island">
+            <h3 class="island_heading">Выберите ваш пол</h3>
+            <p style="text-align: center;" class="island_body">Этот выбор можно изменить позже</p>
+            
+            <span style="display: flex; flex-direction: row; width: 100%; gap: 16px;justify-content: center; margin-bottom: 24px;">
+                <!-- Кнопки выбора пола -->
+                <button class="gender_button" onclick="selectGender('male')" style="border-radius: 8px;">
+                    <img src="static/img/face_man.svg" alt="man face">
+                </button>
+                <button class="gender_button" onclick="selectGender('female')" style="border-radius: 8px;">
+                    <img src="static/img/face_woman.svg" alt="woman face">
+                </button>
+            </span>
+        </div>
+    </main>
+
+    <p id="gender-display" style="text-align: center; font-weight: bold; margin-top: 20px;">
+        Выберите пол персонажа.
+    </p>
+    
+    <span class="form_button">
+        <button class="action_button" onclick="confirmGender()">Подтвердить</button>
+    </span>
+</div>
+
+
+<!--Step 3-->
+<div id="create-character-step-3" style="display: none;">
+    <div class="heading">
+      <button class="back_button" onclick="goBackToStep2()">
+        <img src="static/img/chevron-left.svg" alt="Back" style="margin-right: 8px;">
+        <p>Назад</p>
+      </button>
+      <h1 class="headline-600-large">Ваш персонаж</h1>
+      <div></div>
+    </div>
+    
+    <span class="form_button">
+        <button class="action_button" id="apply-button" onclick="applyCustomization()">
+            Применить
+        </button>
+    </span>
+
+    <!--Character-->
+    <div class="character-scene">
+
+        <!-- Tabs -->
+        <div class="cc_tabs">
+            <span class="buttons_stack">
+            <button class="cc_tab active" onclick="selectTab(0)">
+                <img src="static/img/icon/face_active.svg" alt="face">
+            </button>
+            <button class="cc_tab" onclick="selectTab(1)">
+                <img src="static/img/icon/eye.svg" alt="eye">
+            </button>
+            <button class="cc_tab" onclick="selectTab(2)">
+                <img src="static/img/icon/nose.svg" alt="nose">
+            </button>
+            <button class="cc_tab" onclick="selectTab(3)">
+                <img src="static/img/icon/mouth.svg" alt="mouth">
+            </button>
+            <button class="cc_tab" onclick="selectTab(4)">
+                <img src="static/img/icon/hair.svg" alt="hair">
+            </button>
+            <button class="cc_tab" onclick="selectTab(5)">
+                <img src="static/img/icon/shirt.svg" alt="shirt">
+            </button>
+            <button class="cc_tab" onclick="selectTab(6)">
+                <img src="static/img/icon/pants.svg" alt="pants">
+            </button>
+            <button class="cc_tab" onclick="selectTab(7)">
+                <img src="static/img/icon/shoes.svg" alt="shoes">
+            </button>
+            </span>
+        </div>
+
+        <!--Character-->
+        <div class="character">
+            <div class="head">
+              <img class="hair" src="static/img/character/hair/hair_0.png" alt="hair0">
+              <img class="face" src="static/img/character/face/face_0.png" alt="Head0">
+              <img class="eye" src="static/img/character/eye/eye_0.png" alt="eye0">
+              <img class="nose" src="static/img/character/nose/nose_0.png" alt="nose0">
+              <img class="mouth" src="static/img/character/mouth/mouth_0.png" alt="mouth0"> 
+            </div>
+            <div class="body">
+              <img class="shirt" src="static/img/character/shirt/shirt_0.png" alt="shirt_0">
+              <img class="pants" src="static/img/character/pants/pants_0.png" alt="pants_0">
+              <img class="shoes" src="static/img/character/shoes/shoes_0.png" alt="shoes_0">
+            </div>
+        </div>
+
+        
+        <!-- Пример вкладки Face (tab-content-0) -->
+            <div id="tab-content-0" class="tab-content active">
+                <div class="cc_tabs" style="min-height: 94px;">
+                    <span class="buttons_stack">
+                        <button class="cc_tab active cc_tab_large" onclick="setFace(0, this)">
+                            <img src="static/img/character/face/face_0.png" alt="face_form0">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setFace(1, this)">
+                            <img src="static/img/character/face/face_1.png" alt="face_form1">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setFace(2, this)">
+                            <img src="static/img/character/face/face_2.png" alt="face_form2">
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Eyes -->
+            <div id="tab-content-1" class="tab-content">
+                <div class="cc_tabs" style="min-height: 94px;">
+                    <span class="buttons_stack">
+                        <button class="cc_tab active cc_tab_large" onclick="setEye(0, this)">
+                            <img src="static/img/character/eye/eye_0.png" alt="eye_form0">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setEye(1, this)">
+                            <img src="static/img/character/eye/eye_1.png" alt="eye_form1">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setEye(2, this)">
+                            <img src="static/img/character/eye/eye_2.png" alt="eye_form2">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setEye(3, this)">
+                            <img src="static/img/character/eye/eye_3.png" alt="eye_form3">
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Nose -->
+            <div id="tab-content-2" class="tab-content">
+                <div class="cc_tabs" style="min-height: 94px;">
+                    <span class="buttons_stack">
+                        <button class="cc_tab active cc_tab_large" onclick="setNose(0, this)">
+                            <img src="static/img/character/nose/nose_0.png" alt="nose_form0">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setNose(1, this)">
+                            <img src="static/img/character/nose/nose_1.png" alt="nose_form1">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setNose(2, this)">
+                            <img src="static/img/character/nose/nose_2.png" alt="nose_form2">
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Mouth -->
+            <div id="tab-content-3" class="tab-content">
+                <div class="cc_tabs" style="min-height: 94px;">
+                    <span class="buttons_stack">
+                        <button class="cc_tab active cc_tab_large" onclick="setMouth(0, this)">
+                            <img src="static/img/character/mouth/mouth_0.png" alt="mouth_form0">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setMouth(1, this)">
+                            <img src="static/img/character/mouth/mouth_1.png" alt="mouth_form1">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setMouth(2, this)">
+                            <img src="static/img/character/mouth/mouth_2.png" alt="mouth_form2">
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Hairs -->
+            <div id="tab-content-4" class="tab-content">
+                <div class="cc_tabs" style="min-height: 94px;">
+                    <span class="buttons_stack">
+                        <button class="cc_tab active cc_tab_large" onclick="setHair(0, this)">
+                            <img src="static/img/character/hair/hair_0.png" alt="hair_form0">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setHair(1, this)">
+                            <img src="static/img/character/hair/hair_1.png" alt="hair_form1">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setHair(2, this)">
+                            <img src="static/img/character/hair/hair_2.png" alt="hair_form2">
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+            <!-- T-shirt -->
+            <div id="tab-content-5" class="tab-content">
+                <div class="cc_tabs" style="min-height: 94px;">
+                    <span class="buttons_stack">
+                        <button class="cc_tab active cc_tab_large" onclick="setShirt(0, this)">
+                            <img src="static/img/character/shirt/shirt_0.png" alt="body_form0">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setShirt(1, this)">
+                            <img src="static/img/character/shirt/shirt_1.png" alt="body_form1">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setShirt(2, this)">
+                            <img src="static/img/character/shirt/shirt_2.png" alt="body_form2">
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Pants -->
+            <div id="tab-content-6" class="tab-content">
+                <div class="cc_tabs" style="min-height: 94px;">
+                    <span class="buttons_stack">
+                        <button class="cc_tab active cc_tab_large" onclick="setPants(0, this)">
+                            <img src="static/img/character/pants/pants_0.png" alt="pants_form0">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setPants(1, this)">
+                            <img src="static/img/character/pants/pants_1.png" alt="pants_form1">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setPants(2, this)">
+                            <img src="static/img/character/pants/pants_2.png" alt="pants_form2">
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Shoes -->
+            <div id="tab-content-7" class="tab-content">
+                <div class="cc_tabs" style="min-height: 94px;">
+                    <span class="buttons_stack">
+                        <button class="cc_tab active cc_tab_large" onclick="setShoes(0, this)">
+                            <img src="static/img/character/shoes/shoes_0.png" alt="shoes_form0">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setShoes(1, this)">
+                            <img src="static/img/character/shoes/shoes_1.png" alt="shoes_form1">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setShoes(2, this)">
+                            <img src="static/img/character/shoes/shoes_2.png" alt="shoes_form2">
+                        </button>
+                    </span>
+                </div>
+            </div>
+
+
+        
+</div>
+        
+</div>
+    
+
+
+
+
