@@ -81,3 +81,9 @@ function goBackToStep1() {
     document.getElementById("create-character-step-2").style.display = "none";
     document.getElementById("create-character-step-1").style.display = "block";
 }
+
+
+function goBackToStep2() {
+    document.getElementById("create-character-step-3").style.display = "none";
+    document.getElementById("create-character-step-2").style.display = "block";
+}
