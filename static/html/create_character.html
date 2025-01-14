@@ -1,5 +1,5 @@
 <!--Step--1-->
-<div id="create-character-step-1" style="display: block;">
+<div id="create-character-step-1" style="display: none;">
     
     <div class="heading">
         <!-- Кнопка слева -->
@@ -66,7 +66,7 @@
 
 
 <!--Step 3-->
-<div id="create-character-step-3" style="display: none;">
+<div id="create-character-step-3" style="display: block;">
     <div class="heading">
       <button class="back_button" onclick="goBackToStep2()">
         <img src="static/img/chevron-left.svg" alt="Back" style="margin-right: 8px;">
@@ -126,6 +126,16 @@
             </div>
             <div class="body">
               <img class="shirt" src="static/img/character/shirt/shirt_0.png" alt="shirt_0">
+
+                <!--hands-->
+                <div class="left-hand-container">
+                    <img class="hand_left" src="static/img/character/hand/hand_0.png" alt="hand_0">
+                </div>
+                
+                <div class="right-hand-container">
+                    <img class="hand_right" src="static/img/character/hand/hand_0.png" alt="hand_0">
+                </div>
+
               <img class="pants" src="static/img/character/pants/pants_0.png" alt="pants_0">
               <img class="shoes" src="static/img/character/shoes/shoes_0.png" alt="shoes_0">
             </div>
@@ -144,6 +154,12 @@
                         </button>
                         <button class="cc_tab cc_tab_large" onclick="setFace(2, this)">
                             <img src="static/img/character/face/face_2.png" alt="face_form2">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setFace(3, this)">
+                            <img src="static/img/character/face/face_3.png" alt="face_form2">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setFace(4, this)">
+                            <img src="static/img/character/face/face_4.png" alt="face_form2">
                         </button>
                     </span>
                 </div>
@@ -199,6 +215,9 @@
                         <button class="cc_tab cc_tab_large" onclick="setMouth(2, this)">
                             <img src="static/img/character/mouth/mouth_2.png" alt="mouth_form2">
                         </button>
+                        <button class="cc_tab cc_tab_large" onclick="setMouth(3, this)">
+                            <img src="static/img/character/mouth/mouth_3.png" alt="mouth_form3">
+                        </button>
                     </span>
                 </div>
             </div>
@@ -215,6 +234,9 @@
                         </button>
                         <button class="cc_tab cc_tab_large" onclick="setHair(2, this)">
                             <img src="static/img/character/hair/hair_2.png" alt="hair_form2">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setHair(3, this)">
+                            <img src="static/img/character/hair/hair_3.png" alt="hair_form3">
                         </button>
                     </span>
                 </div>
@@ -233,6 +255,9 @@
                         <button class="cc_tab cc_tab_large" onclick="setShirt(2, this)">
                             <img src="static/img/character/shirt/shirt_2.png" alt="body_form2">
                         </button>
+                        <button class="cc_tab cc_tab_large" onclick="setShirt(3, this)">
+                            <img src="static/img/character/shirt/shirt_3.png" alt="body_form2">
+                        </button>
                     </span>
                 </div>
             </div>
@@ -250,6 +275,9 @@
                         <button class="cc_tab cc_tab_large" onclick="setPants(2, this)">
                             <img src="static/img/character/pants/pants_2.png" alt="pants_form2">
                         </button>
+                        <button class="cc_tab cc_tab_large" onclick="setPants(3, this)">
+                            <img src="static/img/character/pants/pants_3.png" alt="pants_form2">
+                        </button>
                     </span>
                 </div>
             </div>
@@ -266,6 +294,9 @@
                         </button>
                         <button class="cc_tab cc_tab_large" onclick="setShoes(2, this)">
                             <img src="static/img/character/shoes/shoes_2.png" alt="shoes_form2">
+                        </button>
+                        <button class="cc_tab cc_tab_large" onclick="setShoes(3, this)">
+                            <img src="static/img/character/shoes/shoes_3.png" alt="shoes_form2">
                         </button>
                     </span>
                 </div>

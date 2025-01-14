@@ -1,9 +1,11 @@
+
+
 .character-scene{
     width: auto;
-    overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
-
+    overflow-x: hidden;
+    padding-left: 8px;
+    padding-right: 8px;
+    overflow-y: scroll;
 }
 
 
@@ -22,7 +24,7 @@
     align-items: center;
     gap: 0px;
     border-radius: 16px;
-    max-height: 470px;
+    height: 400px;
     background-color: rgba(226, 231, 236, 1);
     padding-top: 16px;
     padding-bottom: 16px;
@@ -33,6 +35,8 @@
     flex-direction: column;
     align-items: center;
     gap: 0px;
+    margin-top: -20px;
+    position: relative;
 }
 
 
@@ -47,56 +51,71 @@
 
 .eye{
     position: absolute;
-    left: 40px;
-    top: 75px;
+    left: 42px;
+    top: 70px;
     width: 118px;
+    z-index: 5;
 }
 
 .nose{
     position: absolute;
-    top: 102px;
+    top: 95px;
     left: 92px;
     width: 20px;
     height: 20px;
+    z-index: 5;
 }
 
 .mouth{
     position: absolute;
-    top: 122px;
-    left: 60px;
+    top: 110px;
+    left: 62px;
     width: 80px;
     height: 30px;
+    z-index: 5;
 }
 
 .hair{
     position: absolute;
     top: 0;
-    left: 0;
-    width: 200px;
-    height: 87px;
+    left: -20px;
+    width: 240px;
+    height: 90px;
+    z-index: 4;
+}
+
+.face{
+    z-index: 3;
 }
 
 
 .shirt{
-    width: 208px;
+    width: 230px;
     height: 116px;
+    z-index: 2;
 }
 
 .pants{
-    width: 93px;
-    height: 81px;
+    width: 130px;
+    height: 90px;
+    z-index: 1;
 }
 
 .shoes{
-    width: 87px;
-    height: 29px;
+    margin-top: -15px;
+    width: 140px;
+    height: 40px;
+    z-index: 0;
+
+    position: absolute;
+    top: 190px;
 }
 
 
 /* Tabs */
 .cc_tabs{
-    margin-top: 24px;
-    margin-bottom: 16px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 
     display: flex;
     padding: 8px;
@@ -198,5 +217,40 @@
     background-color: #005BFF;
     transform: scale(1.1);
 }
+
+.hand_left{
+    width: 130px;
+    height: 34px;
+    position: absolute;
+   
+    z-index: 0;
+    bottom: 120px;
+}
+
+.hand_right{
+    width: 130px;
+    height: 34px;
+    position: absolute;
+
+    z-index: 0;
+    bottom: 150px;
+}
+
+.left-hand-container{
+    position: absolute;
+    left: -120px;
+    bottom: -220px;
+    z-index: 0;
+}
+
+.right-hand-container{
+    position: absolute;
+    left: 10px;
+    bottom: -220px;
+    z-index: 0;
+}
+
+
+
 
 

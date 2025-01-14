@@ -1,0 +1,105 @@
+.eye{
+    animation: blink 3s infinite ease-in-out; /* Анимация моргания */
+}
+
+@keyframes blink {
+    0%, 90% {
+        transform: scaleY(1); /* Открытые глаза */
+    }
+    92%, 98% {
+        transform: scaleY(0); /* Закрытые глаза */
+    }
+    100% {
+        transform: scaleY(1); /* Вернуться к открытому состоянию */
+    }
+}
+
+.head{
+    animation: sway 1s infinite cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes sway {
+    0% {
+        transform: rotate(-2.5deg); /* Исходное положение */
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: rotate(2.5deg); /* Мах вперёд */
+        transform: translate(0, 2px);
+    }
+    100% {
+        transform: rotate(-2.5deg); /* Возврат в исходное положение */
+        transform: translate(0, 0);
+    }
+}
+
+
+.hand_left {
+    transform-origin: top; /* Точка вращения - верх руки */
+    transform: rotate(160deg); /* Начальная позиция */
+    animation: leftwave 1s infinite ease-in-out; /* Анимация маха */
+}
+
+@keyframes leftwave {
+    0% {
+        transform: rotate(160deg); /* Исходное положение */
+    }
+    50% {
+        transform: rotate(155deg); /* Мах вперёд */
+    }
+    100% {
+        transform: rotate(160deg); /* Возврат в исходное положение */
+    }
+}
+
+.hand_right {
+    transform-origin: top; /* Точка вращения - верх руки */
+    transform: rotate(20deg); /* Начальная позиция */
+    animation: rightwave 1s infinite ease-in-out; /* Анимация маха */
+}
+
+@keyframes rightwave {
+    0% {
+        transform: rotate(20deg); /* Исходное положение */
+    }
+    50% {
+        transform: rotate(25deg); /* Мах вперёд */
+    }
+    100% {
+        transform: rotate(20deg); /* Возврат в исходное положение */
+    }
+}
+
+
+.shirt{
+    position: absolute;
+    left: 50%; /* Центровка по горизонтали */
+    transform: translateX(-50%); /* Центровка относительно оси X */
+    animation: moveUpDown 1s infinite ease-in-out; /* Анимация движения вверх и вниз */
+}
+
+
+
+.pants{
+    position: absolute;
+    top: 100px;
+    animation: shirtmoveUpDown 1s infinite ease-in-out; /* Анимация движения вверх и вниз */
+}
+
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translate(-50%, 0); /* Исходное положение */
+    }
+    50% {
+        transform: translate(-50%, -2px); /* Поднятие на 20px вверх */
+    }
+}
+
+@keyframes shirtmoveUpDown {
+    0%, 100% {
+        transform: translate(0, 0); /* Исходное положение */
+    }
+    50% {
+        transform: translate(0, -1px); /* Поднятие на 20px вверх */
+    }
+}
